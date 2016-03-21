@@ -15,4 +15,5 @@ Renames files in order of timestamps.  Pads "0"s if necessary.
   2. To use the app, change directory to where the downloaded jar file is: "cd <dir_to_jar>" (without the quotes)
   3. Type "java -jar renamer.jar" (without the quotes)
   4. When prompted, provide the ABSOLUTE path of the folder containing all files you want renamed.
-  5. Find renamed files in the "output" folder under the ABSOLUTE path you provided in the above step.  If you want to keep them, move them elsewhere now.  If you don't, they will be removed the next time you run the app.
+  5. Optionally, you can provide a prefix to add in an output file name.  For instance, cn01.png.
+  6. Find renamed files in the "output" folder under the ABSOLUTE path you provided in the above step.  If you want to keep them, move them elsewhere now.  If you don't, they will be removed the next time you run the app.

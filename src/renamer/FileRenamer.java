@@ -63,7 +63,12 @@ public class FileRenamer {
 		return filename.substring(index);
 	}
 
-	private static void rename(String source, String target) throws IOException {
+	public static void rename(String source, String target) throws IOException {
+		rename(source, target, "");
+	}
+
+	public static void rename(String source, String target, String prefix)
+			throws IOException {
 		File output = new File(target);
 		File[] files = null;
 		if (!output.exists()) {
@@ -84,7 +89,7 @@ public class FileRenamer {
 			String absolutePath = file.getAbsolutePath();
 			String extension = getFileExtension(absolutePath);
 			Files.copy(Paths.get(absolutePath),
-					Paths.get(target + s + extension),
+					Paths.get(target + prefix + s + extension),
 					StandardCopyOption.REPLACE_EXISTING);
 			s = pad(increment(s), digits);
 		}
@@ -100,7 +105,15 @@ public class FileRenamer {
 		System.out.print("Folder in which files are to be renamed: ");
 		Scanner scanner = new Scanner(System.in);
 		String source = scanner.nextLine();
+		System.out
+				.print("Optionally, what string do you want to use as prefix "
+						+ "(e.g., enter cn to produce cn01.png),\n"
+						+ "and enter if you don't want any prefix: ");
+		String prefix = scanner.nextLine();
 		scanner.close();
-		rename(source, source + "/output/");
+		if (prefix.trim().isEmpty()) {
+
+		}
+		rename(source, source + "/output/", prefix);
 	}
 }
