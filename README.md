@@ -12,7 +12,7 @@ Renames files in order of timestamps.  Pads "0"s if necessary.
 
 ### Steps:
   1. Spotlight Search to type "Terminal"
-  2. To use the app, change directory to where the downloaded jar file is: "cd <dir_to_jar>" (without the quotes)
+  2. To use the app, change directory to where the downloaded jar file is: "cd dir_to_jar" (without the quotes)
   3. Type "java -jar renamer.jar" (without the quotes)
   4. When prompted, provide the ABSOLUTE path of the folder containing all files you want renamed.
   5. Optionally, you can provide a prefix to add in an output file name.  For instance, cn01.png.
